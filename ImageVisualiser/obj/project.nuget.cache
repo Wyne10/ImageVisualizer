@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "nbV5I4G7Ql/xISXuufiMJcsK+OIRF/3M6kokMuu8fTciyB0QGgWhbZaUlTYK31U2FBmQqZcKxXJOqQO0825l3Q==",
+  "success": true,
+  "projectFilePath": "F:\\Coding\\C#\\ImageVisualiser\\ImageVisualiser\\ImageVisualiser.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\offic\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\offic\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
