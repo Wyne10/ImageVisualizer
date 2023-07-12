@@ -1,22 +1,16 @@
-﻿using ImageVisualiser.Properties;
+﻿using ImageVisualiser.Props;
 using System.Drawing;
 
 namespace ImageVisualiser
 {
     public class Program
     {
-        public static ConsolePropertyReader InputProperties { get; private set; }
+        public static Properties Properties { get; private set; } = new Properties();
 
         public static void Main(string[] args)
         {
-            InitializeProperties();
-            var ImageReader = new ImageReader();
-            ImageReader.VisualizeImage(InputProperties.GetProperty<Bitmap>(InputPropertyType.Image));
-        }
-
-        private static void InitializeProperties()
-        {
-            InputProperties = new ConsolePropertyReader();
+            Properties.InitializeProperties();
+            new ImageReader().VisualizeImage(Properties.GetProperty<Bitmap>(PropertyType.Image));
         }
 
     }

@@ -1,12 +1,12 @@
 ﻿using System.Drawing;
 
-namespace ImageVisualiser.Properties.ConsoleInputProperties
+namespace ImageVisualiser.Props.ConsoleInputProperties
 {
     public class ImageFileProperty : Property
     {
-        private string _imagePath;
+        private string? _imagePath;
 
-        public ImageFileProperty(string key) : base(key)
+        public ImageFileProperty(IPropertyReader reader, string key) : base(reader, key)
         { }
 
         public override string GetPropertyString()
@@ -14,13 +14,14 @@ namespace ImageVisualiser.Properties.ConsoleInputProperties
             return _imagePath;
         }
 
-        public override object ReadProperty(string? input)
+        public override object? InitializeProperty()
         {
             try
             {
-                value = new Bitmap(input);
+                string input = _propertyReader.ReadProperty(this);
+                Value = new Bitmap(input);
                 _imagePath = input;
-                return value;
+                return Value;
             }
             catch (Exception ex)
             {
