@@ -1,2 +1,4 @@
 Resources/
 .vs/
+*/bin/
+*/obj/Debug/

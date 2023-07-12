@@ -17,7 +17,7 @@ namespace ImageVisualiser
                         Console.ForegroundColor = ConsoleColor.Gray;
                     else
                         Console.ForegroundColor = ClosestConsoleColor(pixelColor.R, pixelColor.G, pixelColor.B);
-                    Console.Write("@");
+                    Console.Write("■■");
                 }
                 Console.Write("\n");
             }
