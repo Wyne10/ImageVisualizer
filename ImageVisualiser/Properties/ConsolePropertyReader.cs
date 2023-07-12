@@ -2,14 +2,14 @@
 
 namespace ImageVisualiser.Properties
 {
-    public class InputProperties
+    public class ConsolePropertyReader
     {
         private readonly Dictionary<InputPropertyType, Property> _properties = new Dictionary<InputPropertyType, Property>()
         {
             { InputPropertyType.Image, new ImageFileProperty("Путь к изображению") }
         };
 
-        public InputProperties() 
+        public ConsolePropertyReader() 
         {
             InitializeProperties();
             Console.WriteLine("[ИНИЦИАЛИЗАЦИЯ] Инициализация успешно завершена, установленные настройки");
