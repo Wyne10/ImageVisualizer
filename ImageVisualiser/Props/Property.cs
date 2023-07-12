@@ -16,7 +16,7 @@
 
         public abstract string GetPropertyString();
 
-        public PropertyType GetProperty<PropertyType>()
+        public virtual PropertyType GetProperty<PropertyType>()
         {
             return (PropertyType)Value;
         }

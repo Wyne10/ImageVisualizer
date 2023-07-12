@@ -10,7 +10,7 @@
             if (string.IsNullOrEmpty(input))
             {
                 Console.WriteLine("[ОШИБКА] Введённое значение не может быть пустым!");
-                ReadProperty(property);
+                input = ReadProperty(property);
             }
 
             return input;

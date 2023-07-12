@@ -2,26 +2,21 @@
 
 namespace ImageVisualiser.Props.ConsoleInputProperties
 {
-    public class ImageFileProperty : Property
+    public class ImageFilePathProperty : Property
     {
-        private string? _imagePath;
-
-        public ImageFileProperty(IPropertyReader reader, string key) : base(reader, key)
+        public ImageFilePathProperty(IPropertyReader reader, string key) : base(reader, key)
         { }
 
         public override string GetPropertyString()
         {
-            return _imagePath;
+            return Value != null ? (string)Value : "";
         }
 
         public override object? InitializeProperty()
         {
             try
             {
-                string input = _propertyReader.ReadProperty(this);
-                Value = new Bitmap(input);
-                _imagePath = input;
-                return Value;
+                return Value = _propertyReader.ReadProperty(this);
             }
             catch (Exception ex)
             {
@@ -29,7 +24,6 @@ namespace ImageVisualiser.Props.ConsoleInputProperties
                 return null;
             }
         }
-
 
     }
 }

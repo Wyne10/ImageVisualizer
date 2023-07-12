@@ -12,7 +12,7 @@ namespace ImageVisualiser.Props
         {
             _properties = new Dictionary<PropertyType, Property>()
             {
-                { PropertyType.Image, new ImageFileProperty(_consolePropertyReader, "Путь к изображению") }
+                { PropertyType.ImagePath, new ImageFilePathProperty(_consolePropertyReader, "Путь к изображению") }
             };
         }
 
@@ -39,6 +39,6 @@ namespace ImageVisualiser.Props
 
     public enum PropertyType
     {
-        Image
+        ImagePath
     }
 }
