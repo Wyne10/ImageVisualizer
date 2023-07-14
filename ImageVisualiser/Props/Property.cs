@@ -2,13 +2,13 @@
 {
     public abstract class Property
     {
-        protected readonly IPropertyReader _propertyReader;
+        protected readonly IPropertyReader PropertyReader;
         public readonly string Key;
         public object? Value { get; protected set; }
 
-        protected Property(IPropertyReader reader, string key)
+        protected Property(IPropertyReader propertyReader, string key)
         {
-            _propertyReader = reader;
+            PropertyReader = propertyReader;
             Key = key;
         }
 

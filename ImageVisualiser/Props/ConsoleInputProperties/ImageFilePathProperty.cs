@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace ImageVisualiser.Props.ConsoleInputProperties
+﻿namespace ImageVisualiser.Props.ConsoleInputProperties
 {
     public class ImageFilePathProperty : Property
     {
@@ -16,7 +14,7 @@ namespace ImageVisualiser.Props.ConsoleInputProperties
         {
             try
             {
-                return Value = _propertyReader.ReadProperty(this);
+                return Value = PropertyReader.ReadProperty(this);
             }
             catch (Exception ex)
             {

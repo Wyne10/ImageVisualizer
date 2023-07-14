@@ -4,27 +4,22 @@ namespace ImageVisualiser.Props
 {
     public class Properties
     {
-        private readonly ConsolePropertyReader _consolePropertyReader = new ConsolePropertyReader();
+        public static readonly IPropertyReader ConsolePropertyReader = new ConsolePropertyReader();
 
-        private readonly Dictionary<PropertyType, Property> _properties;
-
-        public Properties() 
+        public static readonly Dictionary<PropertyType, Property> PropertyList = new Dictionary<PropertyType, Property>()
         {
-            _properties = new Dictionary<PropertyType, Property>()
-            {
-                { PropertyType.ImagePath, new ImageFilePathProperty(_consolePropertyReader, "Путь к изображению") }
-            };
-        }
+            { PropertyType.ImagePath, new ImageFilePathProperty(ConsolePropertyReader, "Путь к изображению") }
+        };
 
         public void InitializeProperties()
         {
-            foreach (Property property in _properties.Values)
+            foreach (Property property in PropertyList.Values)
             {
                 property.InitializeProperty();
             }
 
             Console.WriteLine("[ИНИЦИАЛИЗАЦИЯ] Инициализация успешно завершена, установленные параметры");
-            foreach (Property property in _properties.Values)
+            foreach (Property property in PropertyList.Values)
             {
                 Console.WriteLine("{0}: {1}", property.Key, property.GetPropertyString());
             }
@@ -32,7 +27,7 @@ namespace ImageVisualiser.Props
 
         public TPropertyType? GetProperty<TPropertyType>(PropertyType type)
         {
-            _properties.TryGetValue(type, out var property);
+            PropertyList.TryGetValue(type, out var property);
             return property != null ? property.GetProperty<TPropertyType>() : default(TPropertyType);
         }
     }
