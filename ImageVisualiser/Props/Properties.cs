@@ -8,7 +8,7 @@ namespace ImageVisualiser.Props
 
         public static readonly Dictionary<PropertyType, Property> PropertyList = new Dictionary<PropertyType, Property>()
         {
-            { PropertyType.Image, new ImageFileProperty(ConsolePropertyReader, "Путь к изображению") }
+            { PropertyType.ImagePath, new ImageFilePathProperty(ConsolePropertyReader, "Путь к изображению") }
         };
 
         public void InitializeProperties()
@@ -34,6 +34,6 @@ namespace ImageVisualiser.Props
 
     public enum PropertyType
     {
-        Image
+        ImagePath
     }
 }

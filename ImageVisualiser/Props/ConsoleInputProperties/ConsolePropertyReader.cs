@@ -2,15 +2,15 @@
 {
     public class ConsolePropertyReader : IPropertyReader
     {
-        public string ReadProperty(string propertyKey)
+        public string ReadProperty(Property property)
         {
-            Console.Write("[ИНИЦИAЛИЗАЦИЯ] {0}: ", propertyKey);
+            Console.Write("[ИНИЦИAЛИЗАЦИЯ] {0}: ", property.Key);
             string? input = Console.ReadLine();
 
             if (string.IsNullOrEmpty(input))
             {
                 Console.WriteLine("[ОШИБКА] Введённое значение не может быть пустым!");
-                input = ReadProperty(propertyKey);
+                input = ReadProperty(property);
             }
 
             return input;
