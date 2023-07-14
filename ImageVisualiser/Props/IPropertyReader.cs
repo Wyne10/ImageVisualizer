@@ -2,6 +2,6 @@
 {
     public interface IPropertyReader
     {
-        public string ReadProperty(Property property);
+        public string ReadProperty(string propertyKey);
     }
 }

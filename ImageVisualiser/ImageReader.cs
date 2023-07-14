@@ -6,17 +6,16 @@ namespace ImageVisualiser
     {
         public ImageReader() { }
 
-        public void VisualizeImage(Bitmap image)
+        public void VisualizeImage(Color[,] pixels)
         {
-            for (var y = 0; y < image.Height; y++)
+            for (var y = 0; y < pixels.GetLength(1); y++)
             {
-                for (var x = 0; x < image.Width; x++)
+                for (var x = 0; x < pixels.GetLength(0); x++)
                 {
-                    Color pixelColor = image.GetPixel(x, y);
-                    if (pixelColor.A < 255)
+                    if (pixels[x,y].A < 255)
                         Console.ForegroundColor = ConsoleColor.Gray;
                     else
-                        Console.ForegroundColor = ClosestConsoleColor(pixelColor.R, pixelColor.G, pixelColor.B);
+                        Console.ForegroundColor = ClosestConsoleColor(pixels[x,y].R, pixels[x, y].G, pixels[x, y].B);
                     Console.Write("■■");
                 }
                 Console.Write("\n");

@@ -10,7 +10,7 @@ namespace ImageVisualiser.Test
         [TestCase(@"F:\Coding\C#\ImageVisualiser\Resources\Dog.jpg")]
         public void ImageFilePropertyTest(string filePath)
         {
-            ImageFilePathProperty imageFileProperty = new ImageFilePathProperty(new ConsolePropertyReader(), "Путь к изображению");
+            ImageFileProperty imageFileProperty = new ImageFileProperty(new ConsolePropertyReader(), "Путь к изображению");
             Console.SetIn(new StringReader(filePath));
             imageFileProperty.InitializeProperty();
             Assert.IsNotNull(imageFileProperty.Value);

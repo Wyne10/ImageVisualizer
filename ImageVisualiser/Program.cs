@@ -10,7 +10,7 @@ namespace ImageVisualiser
         public static void Main(string[] args)
         {
             Properties.InitializeProperties();
-            new ImageReader().VisualizeImage(new Bitmap(Properties.GetProperty<string>(PropertyType.ImagePath)));
+            new ImageReader().VisualizeImage(Properties.GetProperty<Color[,]>(PropertyType.Image));
         }
 
     }
