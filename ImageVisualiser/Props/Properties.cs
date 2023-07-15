@@ -4,11 +4,14 @@ namespace ImageVisualiser.Props
 {
     public class Properties
     {
+        public static readonly Properties Instance = new Properties();
+
         public static readonly IPropertyReader ConsolePropertyReader = new ConsolePropertyReader();
 
         public static readonly Dictionary<PropertyType, Property> PropertyList = new Dictionary<PropertyType, Property>()
         {
-            { PropertyType.ImagePath, new ImageFilePathProperty(ConsolePropertyReader, "Путь к изображению") }
+            { PropertyType.ImagePath, new StringProperty(ConsolePropertyReader, "Путь к изображению") },
+            { PropertyType.OutputSymbol, new StringProperty(ConsolePropertyReader, "Символ для визуализации") }
         };
 
         public void InitializeProperties()
@@ -34,6 +37,7 @@ namespace ImageVisualiser.Props
 
     public enum PropertyType
     {
-        ImagePath
+        ImagePath,
+        OutputSymbol
     }
 }

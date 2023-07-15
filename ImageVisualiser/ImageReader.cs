@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using ImageVisualiser.Props;
+using System.Drawing;
 
 namespace ImageVisualiser
 {
@@ -6,20 +7,23 @@ namespace ImageVisualiser
     {
         public ImageReader() { }
 
-        public void VisualizeImage(Bitmap image)
+        public void VisualizeImage(string imagePath, string outputSymbol)
         {
-            for (var y = 0; y < image.Height; y++)
+            using (Bitmap bmp = new Bitmap(imagePath)) 
             {
-                for (var x = 0; x < image.Width; x++)
+                for (var y = 0; y < bmp.Height; y++)
                 {
-                    Color pixelColor = image.GetPixel(x, y);
-                    if (pixelColor.A < 255)
-                        Console.ForegroundColor = ConsoleColor.Gray;
-                    else
-                        Console.ForegroundColor = ClosestConsoleColor(pixelColor.R, pixelColor.G, pixelColor.B);
-                    Console.Write("■■");
+                    for (var x = 0; x < bmp.Width; x++)
+                    {
+                        Color pixelColor = bmp.GetPixel(x, y);
+                        if (pixelColor.A < 255)
+                            Console.ForegroundColor = ConsoleColor.Gray;
+                        else
+                            Console.ForegroundColor = ClosestConsoleColor(pixelColor.R, pixelColor.G, pixelColor.B);
+                        Console.Write(outputSymbol);
+                    }
+                    Console.Write("\n");
                 }
-                Console.Write("\n");
             }
         }
 

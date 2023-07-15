@@ -1,8 +1,8 @@
 ﻿namespace ImageVisualiser.Props.ConsoleInputProperties
 {
-    public class ImageFilePathProperty : Property
+    public class StringProperty : Property
     {
-        public ImageFilePathProperty(IPropertyReader reader, string key) : base(reader, key)
+        public StringProperty(IPropertyReader propertyReader, string key) : base(propertyReader, key)
         { }
 
         public override string GetPropertyString()
@@ -22,6 +22,5 @@
                 return null;
             }
         }
-
     }
 }
