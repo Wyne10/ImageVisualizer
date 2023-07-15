@@ -25,6 +25,7 @@ namespace ImageVisualiser
                     Console.Write("\n");
                 }
             }
+            Console.ForegroundColor = ConsoleColor.Gray;
         }
 
         private ConsoleColor ClosestConsoleColor(byte r, byte g, byte b)

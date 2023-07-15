@@ -15,6 +15,9 @@ namespace ImageVisualiser.Image.Compression
             {
                 for (var y = 0; y < image.Height; y += ratio)
                 {
+                    if (y / ratio >= image.Height / ratio)
+                        break;
+
                     var pixelChunk = new Color[ratio];
 
                     int i = 0;

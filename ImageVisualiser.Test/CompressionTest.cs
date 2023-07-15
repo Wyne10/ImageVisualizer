@@ -41,6 +41,7 @@ namespace ImageVisualiser.Test
         [TestCase(@"F:\Coding\C#\ImageVisualiser\Resources\BetterDog.jpg", @"F:\Coding\C#\ImageVisualiser\Resources\BetterDogCompressed2x.jpg", 2)]
         [TestCase(@"F:\Coding\C#\ImageVisualiser\Resources\BetterDog.jpg", @"F:\Coding\C#\ImageVisualiser\Resources\BetterDogCompressed3x.jpg", 3)]
         [TestCase(@"F:\Coding\C#\ImageVisualiser\Resources\BetterDog.jpg", @"F:\Coding\C#\ImageVisualiser\Resources\BetterDogCompressed4x.jpg", 4)]
+        [TestCase(@"F:\Coding\C#\ImageVisualiser\Resources\BetterDog.jpg", @"F:\Coding\C#\ImageVisualiser\Resources\BetterDogCompressed16x.jpg", 16)]
         public void ScaleCompressionTest(string imagePath, string outputPath, int ratio)
         {
             ICompressor compressor = new ScaleCompressor();

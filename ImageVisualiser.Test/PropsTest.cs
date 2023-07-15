@@ -1,6 +1,4 @@
-﻿using ImageVisualiser.Props;
-using ImageVisualiser.Props.ConsoleInputProperties;
-using System.Drawing;
+﻿using ImageVisualiser.Props.ConsoleInputProperties;
 
 namespace ImageVisualiser.Test
 {
