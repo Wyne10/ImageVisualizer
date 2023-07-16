@@ -8,7 +8,8 @@ namespace ImageVisualiser
         {
             Properties.Instance.InitializeProperties();
             new ImageReader().VisualizeImage(Properties.Instance.GetProperty<string>(PropertyType.ImagePath),
-                                            Properties.Instance.GetProperty<string>(PropertyType.OutputSymbol));
+                                            Properties.Instance.GetProperty<string>(PropertyType.OutputSymbol),
+                                            Properties.Instance.GetProperty<uint>(PropertyType.CompressionRatio));
         }
 
     }

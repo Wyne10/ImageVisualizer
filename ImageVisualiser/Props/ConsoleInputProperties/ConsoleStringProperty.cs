@@ -1,8 +1,8 @@
 ﻿namespace ImageVisualiser.Props.ConsoleInputProperties
 {
-    public class StringProperty : Property
+    public class ConsoleStringProperty : Property
     {
-        public StringProperty(IPropertyReader propertyReader, string key) : base(propertyReader, key)
+        public ConsoleStringProperty(IPropertyReader propertyReader, string key) : base(propertyReader, key)
         { }
 
         public override string GetPropertyString()

@@ -10,8 +10,9 @@ namespace ImageVisualiser.Props
 
         public static readonly Dictionary<PropertyType, Property> PropertyList = new Dictionary<PropertyType, Property>()
         {
-            { PropertyType.ImagePath, new StringProperty(ConsolePropertyReader, "Путь к изображению") },
-            { PropertyType.OutputSymbol, new StringProperty(ConsolePropertyReader, "Символ для визуализации") }
+            { PropertyType.ImagePath, new ConsoleStringProperty(ConsolePropertyReader, "Путь к изображению") },
+            { PropertyType.OutputSymbol, new ConsoleStringProperty(ConsolePropertyReader, "Символ для визуализации") },
+            { PropertyType.CompressionRatio, new ConsoleUIntProperty(ConsolePropertyReader, "Степень сжатия изображения (0 - Авто, 1 - Оригинал, 2 - Сжатие в 2 раза и т.д.)")}
         };
 
         public void InitializeProperties()
@@ -21,7 +22,7 @@ namespace ImageVisualiser.Props
                 property.InitializeProperty();
             }
 
-            Console.WriteLine("[ИНИЦИАЛИЗАЦИЯ] Инициализация успешно завершена, установленные параметры");
+            Console.WriteLine("\n[ИНИЦИАЛИЗАЦИЯ] Инициализация успешно завершена, установленные параметры");
             foreach (Property property in PropertyList.Values)
             {
                 Console.WriteLine("{0}: {1}", property.Key, property.GetPropertyString());
@@ -38,6 +39,7 @@ namespace ImageVisualiser.Props
     public enum PropertyType
     {
         ImagePath,
-        OutputSymbol
+        OutputSymbol,
+        CompressionRatio
     }
 }

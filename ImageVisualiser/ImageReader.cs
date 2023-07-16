@@ -1,4 +1,5 @@
-﻿using ImageVisualiser.Props;
+﻿using ImageVisualiser.Image.Compression;
+using ImageVisualiser.Props;
 using System.Drawing;
 
 namespace ImageVisualiser
@@ -7,15 +8,16 @@ namespace ImageVisualiser
     {
         public ImageReader() { }
 
-        public void VisualizeImage(string imagePath, string outputSymbol)
+        public void VisualizeImage(string imagePath, string outputSymbol, uint compressionRatio)
         {
             using (Bitmap bmp = new Bitmap(imagePath)) 
             {
-                for (var y = 0; y < bmp.Height; y++)
+                using (Bitmap compressedBmp = new ScaleCompressor().Compress(bmp, (int)compressionRatio))
+                for (var y = 0; y < compressedBmp.Height; y++)
                 {
-                    for (var x = 0; x < bmp.Width; x++)
+                    for (var x = 0; x < compressedBmp.Width; x++)
                     {
-                        Color pixelColor = bmp.GetPixel(x, y);
+                        Color pixelColor = compressedBmp.GetPixel(x, y);
                         if (pixelColor.A < 255)
                             Console.ForegroundColor = ConsoleColor.Gray;
                         else
