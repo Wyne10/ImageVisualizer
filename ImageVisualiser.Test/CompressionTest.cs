@@ -8,7 +8,7 @@ namespace ImageVisualiser.Test
     {
         [TestCase(@"F:\Coding\C#\ImageVisualiser\Resources\BetterDog.jpg", @"F:\Coding\C#\ImageVisualiser\Resources\BetterDogWidthCompressed2x.jpg", 2)]
         [TestCase(@"F:\Coding\C#\ImageVisualiser\Resources\BetterDog.jpg", @"F:\Coding\C#\ImageVisualiser\Resources\BetterDogWidthCompressed3x.jpg", 3)]
-        [TestCase(@"F:\Coding\C#\ImageVisualiser\Resources\BetterDog.jpg", @"F:\Coding\C#\ImageVisualiser\Resources\BetterDogWidthCompressed4x.jpg", 4)]
+        [TestCase(@"F:\Coding\C#\ImageVisualiser\Resources\BetterDog.jpg", @"F:\Coding\C#\ImageVisualiser\Resources\BetterDogWidthCompressed16x.jpg", 16)]
         public void WidthCompressionTest(string imagePath, string outputPath, int ratio)
         {
             ICompressor compressor = new WidthCompressor();
@@ -24,7 +24,7 @@ namespace ImageVisualiser.Test
 
         [TestCase(@"F:\Coding\C#\ImageVisualiser\Resources\BetterDog.jpg", @"F:\Coding\C#\ImageVisualiser\Resources\BetterDogHeightCompressed2x.jpg", 2)]
         [TestCase(@"F:\Coding\C#\ImageVisualiser\Resources\BetterDog.jpg", @"F:\Coding\C#\ImageVisualiser\Resources\BetterDogHeightCompressed3x.jpg", 3)]
-        [TestCase(@"F:\Coding\C#\ImageVisualiser\Resources\BetterDog.jpg", @"F:\Coding\C#\ImageVisualiser\Resources\BetterDogHeightCompressed4x.jpg", 4)]
+        [TestCase(@"F:\Coding\C#\ImageVisualiser\Resources\BetterDog.jpg", @"F:\Coding\C#\ImageVisualiser\Resources\BetterDogHeightCompressed16x.jpg", 16)]
         public void HeightCompressionTest(string imagePath, string outputPath, int ratio)
         {
             ICompressor compressor = new HeightCompressor();
@@ -40,7 +40,6 @@ namespace ImageVisualiser.Test
 
         [TestCase(@"F:\Coding\C#\ImageVisualiser\Resources\BetterDog.jpg", @"F:\Coding\C#\ImageVisualiser\Resources\BetterDogCompressed2x.jpg", 2)]
         [TestCase(@"F:\Coding\C#\ImageVisualiser\Resources\BetterDog.jpg", @"F:\Coding\C#\ImageVisualiser\Resources\BetterDogCompressed3x.jpg", 3)]
-        [TestCase(@"F:\Coding\C#\ImageVisualiser\Resources\BetterDog.jpg", @"F:\Coding\C#\ImageVisualiser\Resources\BetterDogCompressed4x.jpg", 4)]
         [TestCase(@"F:\Coding\C#\ImageVisualiser\Resources\BetterDog.jpg", @"F:\Coding\C#\ImageVisualiser\Resources\BetterDogCompressed16x.jpg", 16)]
         public void ScaleCompressionTest(string imagePath, string outputPath, int ratio)
         {
