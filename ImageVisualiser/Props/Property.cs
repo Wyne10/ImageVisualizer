@@ -1,24 +1,34 @@
 ﻿namespace ImageVisualiser.Props
 {
-    public abstract class Property
+    public abstract class Property : IProperty
     {
         protected readonly IPropertyReader PropertyReader;
-        public readonly string Key;
-        public object? Value { get; protected set; }
+        private readonly string _key;
+        protected object? Value { get; set; }
 
         protected Property(IPropertyReader propertyReader, string key)
         {
             PropertyReader = propertyReader;
-            Key = key;
+            _key = key;
         }
 
         public abstract object? InitializeProperty();
 
-        public abstract string GetPropertyString();
+        public abstract override string ToString();
 
-        public virtual PropertyType GetProperty<PropertyType>()
+        public virtual PropertyType? GetProperty<PropertyType>()
         {
-            return (PropertyType)Value;
+            return Value != null ? (PropertyType)Value : default(PropertyType);
+        }
+
+        public string GetKey()
+        {
+            return _key;
+        }
+
+        public object? GetValue()
+        {
+            return Value;
         }
     }
 }

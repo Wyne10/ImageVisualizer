@@ -5,7 +5,7 @@
         public ConsoleStringProperty(IPropertyReader propertyReader, string key) : base(propertyReader, key)
         { }
 
-        public override string GetPropertyString()
+        public override string ToString()
         {
             return Value != null ? (string)Value : "";
         }

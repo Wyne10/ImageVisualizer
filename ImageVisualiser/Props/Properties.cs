@@ -8,7 +8,7 @@ namespace ImageVisualiser.Props
 
         public static readonly IPropertyReader ConsolePropertyReader = new ConsolePropertyReader();
 
-        public static readonly Dictionary<PropertyType, Property> PropertyList = new Dictionary<PropertyType, Property>()
+        public static readonly Dictionary<PropertyType, IProperty> PropertyList = new Dictionary<PropertyType, IProperty>()
         {
             { PropertyType.ImagePath, new ConsoleStringProperty(ConsolePropertyReader, "Путь к изображению") },
             { PropertyType.OutputSymbol, new ConsoleStringProperty(ConsolePropertyReader, "Символ для визуализации") },
@@ -17,15 +17,15 @@ namespace ImageVisualiser.Props
 
         public void InitializeProperties()
         {
-            foreach (Property property in PropertyList.Values)
+            foreach (IProperty property in PropertyList.Values)
             {
                 property.InitializeProperty();
             }
 
             Console.WriteLine("\n[ИНИЦИАЛИЗАЦИЯ] Инициализация успешно завершена, установленные параметры");
-            foreach (Property property in PropertyList.Values)
+            foreach (IProperty property in PropertyList.Values)
             {
-                Console.WriteLine("{0}: {1}", property.Key, property.GetPropertyString());
+                Console.WriteLine("{0}: {1}", property.GetKey(), property.ToString());
             }
         }
 

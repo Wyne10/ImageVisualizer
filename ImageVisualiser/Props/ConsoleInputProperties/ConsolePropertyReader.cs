@@ -4,7 +4,7 @@
     {
         public string ReadProperty(Property property)
         {
-            Console.Write("[ИНИЦИAЛИЗАЦИЯ] {0}: ", property.Key);
+            Console.Write("[ИНИЦИAЛИЗАЦИЯ] {0}: ", property.GetKey());
             string? input = Console.ReadLine();
 
             if (string.IsNullOrEmpty(input))
