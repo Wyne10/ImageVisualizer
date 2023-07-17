@@ -2,7 +2,7 @@
 
 namespace ImageVisualiser.Image.Compression
 {
-    public class HeightCompressor : Compressor
+    public class HeightCompressor : ChunkCompressor
     {
         public override Bitmap Compress(Bitmap image, int ratio)
         {
@@ -18,18 +18,7 @@ namespace ImageVisualiser.Image.Compression
                     if (y / ratio >= image.Height / ratio)
                         break;
 
-                    var pixelChunk = new Color[ratio];
-
-                    int i = 0;
-                    for (var pixel = y; pixel < y + ratio; pixel++)
-                    {
-                        if (image.Height < y + ratio)
-                            break;
-
-                        pixelChunk[i] = image.GetPixel(x, pixel);
-                        i++;
-                    }
-
+                    var pixelChunk = GetPixelChunk(image, y, ratio, (int currentPixel) => { return image.GetPixel(x, currentPixel); });
                     compressedImage.SetPixel(x, y / ratio, CompressPixelChunk(pixelChunk, ratio));
                 }
             }

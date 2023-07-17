@@ -2,9 +2,23 @@
 
 namespace ImageVisualiser.Image.Compression
 {
-    public abstract class Compressor : ICompressor
+    public abstract class ChunkCompressor : ICompressor
     {
         public abstract Bitmap Compress(Bitmap image, int ratio);
+
+        protected Color[] GetPixelChunk(Bitmap image, int firstPixel, int ratio, Func<int, Color> getPixelFunc)
+        {
+            var pixelChunk = new Color[ratio];
+
+            int i = 0;
+            for (var currentPixel = firstPixel; currentPixel < firstPixel + ratio; currentPixel++)
+            {
+                pixelChunk[i] = getPixelFunc.Invoke(currentPixel);
+                i++;
+            }
+
+            return pixelChunk;
+        }
 
         protected Color CompressPixelChunk(Color[] pixelChunk, int ratio)
         {

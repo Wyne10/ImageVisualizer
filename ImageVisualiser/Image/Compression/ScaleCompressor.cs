@@ -2,9 +2,9 @@
 
 namespace ImageVisualiser.Image.Compression
 {
-    public class ScaleCompressor : Compressor
+    public class ScaleCompressor : ICompressor
     {
-        public override Bitmap Compress(Bitmap image, int ratio)
+        public Bitmap Compress(Bitmap image, int ratio)
         {
             Bitmap compressedImage;
 

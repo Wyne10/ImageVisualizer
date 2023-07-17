@@ -12,7 +12,7 @@ namespace ImageVisualiser.Props
         {
             { PropertyType.ImagePath, new ConsoleStringProperty(ConsolePropertyReader, "Путь к изображению") },
             { PropertyType.OutputSymbol, new ConsoleStringProperty(ConsolePropertyReader, "Символ для визуализации") },
-            { PropertyType.CompressionRatio, new ConsoleUIntProperty(ConsolePropertyReader, "Степень сжатия изображения (0 - Авто, 1 - Оригинал, 2 - Сжатие в 2 раза и т.д.)")}
+            { PropertyType.CompressionRatio, new ConsoleUIntProperty(ConsolePropertyReader, "Степень сжатия изображения (1 - Оригинал, 2 - Сжатие в 2 раза и т.д.)")}
         };
 
         public void InitializeProperties()
