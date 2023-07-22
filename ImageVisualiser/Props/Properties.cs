@@ -10,9 +10,9 @@ namespace ImageVisualiser.Props
 
         public static readonly Dictionary<PropertyType, IProperty> PropertyList = new Dictionary<PropertyType, IProperty>()
         {
-            { PropertyType.ImagePath, new ConsoleStringProperty(ConsolePropertyReader, "Путь к изображению") },
-            { PropertyType.CompressionRatio, new ConsoleUIntProperty(ConsolePropertyReader, "Степень сжатия изображения (1 - Оригинал, 2 - Сжатие в 2 раза и т.д.)")},
-            { PropertyType.OutputSymbol, new ConsoleStringProperty(ConsolePropertyReader, "Символ для визуализации") }
+            { PropertyType.ImagePath, new ConsoleStringProperty(ConsolePropertyReader, Resources.ConsoleOutput.ImagePathPropertyKey) },
+            { PropertyType.CompressionRatio, new ConsoleUIntProperty(ConsolePropertyReader, Resources.ConsoleOutput.CompressionRatioPropertyKey) },
+            { PropertyType.OutputSymbol, new ConsoleStringProperty(ConsolePropertyReader, Resources.ConsoleOutput.OutputSymbolPropertyKey) }
         };
 
         public void InitializeProperties()
@@ -22,10 +22,10 @@ namespace ImageVisualiser.Props
                 property.InitializeProperty();
             }
 
-            Console.WriteLine("\n[ИНИЦИАЛИЗАЦИЯ] Инициализация успешно завершена, установленные параметры");
+            Console.WriteLine($"\n{Resources.ConsoleOutput.InitializationTag} {Resources.ConsoleOutput.SuccessfulInitialization}");
             foreach (IProperty property in PropertyList.Values)
             {
-                Console.WriteLine("{0}: {1}", property.GetKey(), property.ToString());
+                Console.WriteLine($"{property.GetKey()}: {property.ToString()}");
             }
         }
 

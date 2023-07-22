@@ -4,12 +4,12 @@
     {
         public string ReadProperty(Property property)
         {
-            Console.Write("[ИНИЦИAЛИЗАЦИЯ] {0}: ", property.GetKey());
+            Console.Write($"{Resources.ConsoleOutput.InitializationTag} {property.GetKey()}: ");
             string? input = Console.ReadLine();
 
             if (string.IsNullOrEmpty(input))
             {
-                Console.WriteLine("[ОШИБКА] Введённое значение не может быть пустым!");
+                Console.WriteLine($"{Resources.ConsoleOutput.ErrorTag} {Resources.ConsoleOutput.EmptyValueException}");
                 input = ReadProperty(property);
             }
 

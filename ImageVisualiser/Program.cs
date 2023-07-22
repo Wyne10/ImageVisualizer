@@ -1,4 +1,5 @@
 ﻿using ImageVisualiser.Props;
+using System.Globalization;
 
 namespace ImageVisualiser
 {
@@ -6,8 +7,9 @@ namespace ImageVisualiser
     {
         public static void Main(string[] args)
         {
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-US");
             Properties.Instance.InitializeProperties();
-            new ImageReader().VisualizeImage(Properties.Instance.GetProperty<string>(PropertyType.ImagePath),
+            ImageReader.VisualizeImage(Properties.Instance.GetProperty<string>(PropertyType.ImagePath),
                                             Properties.Instance.GetProperty<string>(PropertyType.OutputSymbol),
                                             Properties.Instance.GetProperty<uint>(PropertyType.CompressionRatio));
         }

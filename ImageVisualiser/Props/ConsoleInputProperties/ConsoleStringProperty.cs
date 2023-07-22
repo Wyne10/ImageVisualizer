@@ -18,7 +18,7 @@
             }
             catch (Exception ex)
             {
-                Console.WriteLine("[ОШИБКА] {0}", ex.Message);
+                Console.WriteLine($"{Resources.ConsoleOutput.ErrorTag} {ex.Message}");
                 return null;
             }
         }

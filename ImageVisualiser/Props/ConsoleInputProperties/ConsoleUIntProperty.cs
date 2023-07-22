@@ -18,14 +18,14 @@
                 bool result = UInt32.TryParse(PropertyReader.ReadProperty(this), out value);
                 if (result == false)
                 {
-                    Console.WriteLine("[ОШИБКА] Нужно ввести неотрицательное число!");
+                    Console.WriteLine($"{Resources.ConsoleOutput.ErrorTag} {Resources.ConsoleOutput.NegativeValueException}");
                     value = (uint)InitializeProperty();
                 }
                 return Value = value;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("[ОШИБКА] {0}", ex.Message);
+                Console.WriteLine($"{Resources.ConsoleOutput.ErrorTag} {ex.Message}");
                 return null;
             }
         }
