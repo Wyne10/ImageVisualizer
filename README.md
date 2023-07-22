@@ -9,6 +9,8 @@ This project is a simple image visualizer that uses console colors and symbols t
 ## Highlights
 I really tried my best to make code extensible and i think i made pretty good job with property system as you can easily add, get properties and probably create more property reader systems. Right now all the properties obtained via user input in console but it should be easy to make something like JSON property reader (which is not needed in current project state).
 
+In this project i used unit testing (NUnit) and localization (Resources) for the first time.
+
 ## Features
 - Parse any image and draw them using colored symbols
 - Scale images so their symbol projection can fit in console window
