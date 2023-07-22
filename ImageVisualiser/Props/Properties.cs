@@ -11,8 +11,8 @@ namespace ImageVisualiser.Props
         public static readonly Dictionary<PropertyType, IProperty> PropertyList = new Dictionary<PropertyType, IProperty>()
         {
             { PropertyType.ImagePath, new ConsoleStringProperty(ConsolePropertyReader, "Путь к изображению") },
-            { PropertyType.OutputSymbol, new ConsoleStringProperty(ConsolePropertyReader, "Символ для визуализации") },
-            { PropertyType.CompressionRatio, new ConsoleUIntProperty(ConsolePropertyReader, "Степень сжатия изображения (1 - Оригинал, 2 - Сжатие в 2 раза и т.д.)")}
+            { PropertyType.CompressionRatio, new ConsoleUIntProperty(ConsolePropertyReader, "Степень сжатия изображения (1 - Оригинал, 2 - Сжатие в 2 раза и т.д.)")},
+            { PropertyType.OutputSymbol, new ConsoleStringProperty(ConsolePropertyReader, "Символ для визуализации") }
         };
 
         public void InitializeProperties()

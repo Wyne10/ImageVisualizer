@@ -6,7 +6,7 @@ namespace ImageVisualiser.Image.Compression
     {
         public abstract Bitmap Compress(Bitmap image, int ratio);
 
-        protected Color[] GetPixelChunk(Bitmap image, int firstPixel, int ratio, Func<int, Color> getPixelFunc)
+        protected Color[] GetPixelChunk(int firstPixel, int ratio, Func<int, Color> getPixelFunc)
         {
             var pixelChunk = new Color[ratio];
 

@@ -18,7 +18,7 @@ namespace ImageVisualiser.Image.Compression
                     if (y / ratio >= image.Height / ratio)
                         break;
 
-                    var pixelChunk = GetPixelChunk(image, y, ratio, (int currentPixel) => { return image.GetPixel(x, currentPixel); });
+                    var pixelChunk = GetPixelChunk(y, ratio, (int currentPixel) => { return image.GetPixel(x, currentPixel); });
                     compressedImage.SetPixel(x, y / ratio, CompressPixelChunk(pixelChunk, ratio));
                 }
             }
