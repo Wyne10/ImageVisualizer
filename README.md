@@ -13,7 +13,7 @@ I really tried my best to make code extensible and i think i made pretty good jo
 - Parse any image and draw them using colored symbols
 - Scale images so their symbol projection can fit in console window
 - User can select visualization symbol
-- English and russing localizations
+- English and Russian localizations
 
 ## Known issues
 - .NET doesn't provide method to set any RGB or HEX color values to console text, so my program is restricted to [ConsoleColor](https://learn.microsoft.com/ru-ru/dotnet/api/system.consolecolor?view=net-7.0) enum. Program converts pixel RGB color to ConsoleColor using some code i took from StackOverflow. This alghorithm is pretty bad so it makes incorrect colors almost always, i don't know if there is a way to make superior algorithm that will be more precise, but the only idea i came up with is to match every [Color.KnownColor](https://learn.microsoft.com/ru-ru/dotnet/api/system.drawing.knowncolor?view=net-7.0) enum value to ConsoleColor enum values, but it doesn't worth time so i won't do this.
