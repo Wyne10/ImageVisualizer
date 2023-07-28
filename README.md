@@ -19,7 +19,7 @@ In this project i used unit testing (NUnit) and localization (Resources) for the
 
 ## Known issues
 - .NET doesn't provide method to set any RGB or HEX color values to console text, so my program is restricted to [ConsoleColor](https://learn.microsoft.com/ru-ru/dotnet/api/system.consolecolor?view=net-7.0) enum. Program converts pixel RGB color to ConsoleColor using some code i took from StackOverflow. This alghorithm is pretty bad so it makes incorrect colors almost always, i don't know if there is a way to make superior algorithm that will be more precise, but the only idea i came up with is to match every [Color.KnownColor](https://learn.microsoft.com/ru-ru/dotnet/api/system.drawing.knowncolor?view=net-7.0) enum value to ConsoleColor enum values, but it doesn't worth time so i won't do this.
-- I don't like my implementation of image compressor. I made height, width compressors and compressor that combines width and height. I decided to split width and height in favour to extensiability but both HeightCompressor and WidthCompressor classes voilate DRY principle even though i tried to fix it in ChunkCompressor class.
+- I don't like my implementation of image compressor. I made height, width compressors and compressor that combines width and height. I decided to split width and height in favour to extensibility but both HeightCompressor and WidthCompressor classes violate DRY principle even though i tried to fix it in ChunkCompressor class.
 - Currently [18ee105](https://github.com/Wyne10/ImageVisualizer/commit/18ee105) i have my Properties class made as singleton but i think it can be made as DI-Container. I don't know how to implement DI-Container yet so i think it will be fixed later.
 
 ## Updates that will not be implemented
